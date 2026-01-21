@@ -17,8 +17,8 @@ Application de gestion de tâches sécurisée développée avec les principes De
 
 1. Cloner le dépôt
 ```bash
-git clone <url-du-depot>
-cd "Todo App"
+git clone https://github.com/Emmanuelladegbegnon/securetodo-devsecops.git
+cd securetodo-devsecops
 ```
 
 2. Installer les dépendances
@@ -79,19 +79,76 @@ npm test
 ## 📝 Structure du projet
 
 ```
-Todo App/
+securetodo-devsecops/
+├── .github/workflows/        # Pipelines CI/CD
+│   ├── ci.yml               # Pipeline principal
+│   └── security.yml         # Scans de sécurité
 ├── src/
 │   ├── SecureTodoApp.jsx    # Composant principal
-│   ├── main.jsx              # Point d'entrée
-│   └── index.css             # Styles globaux
-├── index.html                # Template HTML
-├── package.json              # Dépendances
-├── vite.config.js            # Configuration Vite
-├── tailwind.config.js        # Configuration Tailwind
-└── README.md                 # Documentation
+│   ├── SecureTodoApp.test.jsx # Tests
+│   ├── main.jsx             # Point d'entrée
+│   └── index.css            # Styles globaux
+├── public/
+│   └── _headers             # Headers de sécurité
+├── SECURITY.md              # Rapport de sécurité
+├── DEPLOYMENT.md            # Guide de déploiement
+├── CHANGELOG.md             # Historique des versions
+├── vercel.json              # Configuration Vercel
+└── README.md                # Ce fichier
 ```
+
+## 🚀 Déploiement
+
+### Déploiement automatique avec Vercel
+
+1. Connectez votre dépôt GitHub à Vercel
+2. Chaque push sur `main` déclenche un déploiement automatique
+3. Les Pull Requests génèrent des previews automatiques
+
+**URL de production :** `https://securetodo-devsecops.vercel.app`
+
+Voir [DEPLOYMENT.md](./DEPLOYMENT.md) pour plus de détails.
+
+## 🔐 Sécurité
+
+Ce projet implémente les meilleures pratiques DevSecOps :
+
+- **Shift Left Security** : Sécurité intégrée dès la conception
+- **Tests automatisés** : 13 tests dont 9 tests de sécurité
+- **Pipeline CI/CD** : Scans de sécurité automatiques
+- **Threat Model STRIDE** : Analyse complète des menaces
+
+Voir [SECURITY.md](./SECURITY.md) pour le rapport complet.
+
+## 📚 Documentation
+
+- [🚀 Démarrage rapide](./DEMARRAGE_RAPIDE.md)
+- [📦 Installation détaillée](./INSTALLATION.md)
+- [🔒 Rapport de sécurité](./SECURITY.md)
+- [🛡️ Bonnes pratiques](./SECURITY_BEST_PRACTICES.md)
+- [🚀 Guide de déploiement](./DEPLOYMENT.md)
+- [📊 Diagrammes](./DIAGRAMMES.md)
+- [📝 Changelog](./CHANGELOG.md)
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Veuillez :
+
+1. Fork le projet
+2. Créer une branche (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'feat: Add AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT.
 
 ## 🇧🇯 Made in Bénin
 
-Développé avec ❤️ pour démontrer les principes DevSecOps
+Développé avec ❤️ pour démontrer les principes DevSecOps dans un contexte africain.
+
+**Projet réalisé pour :** Startup fictive béninoise
+**Objectif :** Livrer vite, éviter les erreurs, réduire les failles de sécurité
+**Résultat :** Application sécurisée, testée et prête pour production
 
