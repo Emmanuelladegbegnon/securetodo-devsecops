@@ -1,5 +1,10 @@
 # 🔒 SecureTodo - Application DevSecOps
 
+![CI/CD Pipeline](https://github.com/Emmanuelladegbegnon/securetodo-devsecops/workflows/CI%2FCD%20Pipeline/badge.svg)
+[![Security](https://img.shields.io/badge/security-DevSecOps-blue.svg)](https://github.com/Emmanuelladegbegnon/securetodo-devsecops)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/react-18.2.0-61dafb.svg)](https://reactjs.org/)
+
 Application de gestion de tâches sécurisée développée avec les principes DevSecOps.
 
 ## 🚀 Installation
