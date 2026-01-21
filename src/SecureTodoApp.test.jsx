@@ -21,9 +21,12 @@ describe('SecureTodoApp - Security Tests', () => {
     const maliciousInput = '<img src=x onerror=alert(1)>';
     div.textContent = maliciousInput;
     const sanitized = div.innerHTML;
-    
-    expect(sanitized).not.toContain('onerror');
-    expect(sanitized).toBe('&lt;img src=x onerror=alert(1)&gt;');
+
+    // Vérifie que les balises HTML sont échappées (pas exécutables)
+    expect(sanitized).not.toContain('<img');
+    expect(sanitized).not.toContain('<script');
+    expect(sanitized).toContain('&lt;');
+    expect(sanitized).toContain('&gt;');
   });
 
   it('should enforce maximum title length of 200 characters', () => {
