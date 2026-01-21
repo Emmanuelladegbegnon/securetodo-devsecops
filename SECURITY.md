@@ -1,16 +1,16 @@
-# 🔒 Rapport de Sécurité - SecureTodo
+﻿#  Rapport de Sécurité - SecureTodo
 
-## 📋 Vue d'ensemble
+##  Vue d'ensemble
 
 Ce document décrit les mesures de sécurité implémentées dans l'application SecureTodo selon les principes DevSecOps.
 
 ---
 
-## 🛡️ Mesures de sécurité implémentées
+##  Mesures de sécurité implémentées
 
 ### 1. Protection contre les attaques XSS (Cross-Site Scripting)
 
-#### ✅ Sanitization des inputs
+####  Sanitization des inputs
 ```javascript
 const sanitizeInput = (str) => {
   const div = document.createElement('div');
@@ -25,9 +25,9 @@ const sanitizeInput = (str) => {
 - Empêche l'exécution de code malveillant
 
 **Tests :**
-- ✅ Test XSS sur le titre
-- ✅ Test XSS sur la description
-- ✅ Validation des balises HTML échappées
+-  Test XSS sur le titre
+-  Test XSS sur la description
+-  Validation des balises HTML échappées
 
 ---
 
@@ -52,9 +52,9 @@ const sanitizeInput = (str) => {
 ### 3. Validation des données
 
 #### Validation du titre
-- ✅ Longueur maximale : 200 caractères
-- ✅ Titre non vide requis
-- ✅ Sanitization automatique
+-  Longueur maximale : 200 caractères
+-  Titre non vide requis
+-  Sanitization automatique
 
 #### Validation de la structure
 ```javascript
@@ -90,9 +90,9 @@ useEffect(() => {
 ```
 
 **Mesures :**
-- ✅ Try-catch pour gérer les erreurs
-- ✅ Validation que les données sont un tableau
-- ✅ Nettoyage automatique en cas d'erreur
+-  Try-catch pour gérer les erreurs
+-  Validation que les données sont un tableau
+-  Nettoyage automatique en cas d'erreur
 
 ---
 
@@ -105,63 +105,63 @@ useEffect(() => {
 
 ---
 
-## 🎯 Threat Model - STRIDE
+##  Threat Model - STRIDE
 
 ### Spoofing (Usurpation d'identité)
-- **Niveau :** ⚠️ Faible
+- **Niveau :**  Faible
 - **Raison :** Application locale mono-utilisateur
 - **Mitigation :** Non applicable pour cette version
 
 ### Tampering (Altération)
-- **Niveau :** ⚠️ Moyen
+- **Niveau :**  Moyen
 - **Risque :** Manipulation du localStorage
-- **Mitigation :** ✅ Validation au chargement, sanitization
+- **Mitigation :**  Validation au chargement, sanitization
 
 ### Repudiation (Répudiation)
-- **Niveau :** ⚠️ Faible
+- **Niveau :**  Faible
 - **Raison :** Pas de logs d'audit
 - **Mitigation :** Non critique pour cette application
 
 ### Information Disclosure (Divulgation d'information)
-- **Niveau :** ⚠️ Faible
+- **Niveau :**  Faible
 - **Raison :** Pas de données sensibles
-- **Mitigation :** ✅ Données stockées localement uniquement
+- **Mitigation :**  Données stockées localement uniquement
 
 ### Denial of Service (Déni de service)
-- **Niveau :** ⚠️ Moyen
+- **Niveau :**  Moyen
 - **Risque :** Saturation du localStorage
-- **Mitigation :** ✅ Limite de 200 caractères par titre
+- **Mitigation :**  Limite de 200 caractères par titre
 
 ### Elevation of Privilege (Élévation de privilèges)
-- **Niveau :** 🔴 Élevé
+- **Niveau :**  Élevé
 - **Risque :** Injection XSS
-- **Mitigation :** ✅ sanitizeInput() + CSP
+- **Mitigation :**  sanitizeInput() + CSP
 
 ---
 
-## 📊 Résultats des tests de sécurité
+##  Résultats des tests de sécurité
 
 ### Tests unitaires
 ```
-✅ 13/13 tests passés
-✅ 9 tests de sécurité
-✅ 4 tests fonctionnels
+ 13/13 tests passés
+ 9 tests de sécurité
+ 4 tests fonctionnels
 ```
 
 ### Tests de sécurité spécifiques
-1. ✅ Sanitization XSS (titre)
-2. ✅ Sanitization XSS (description)
-3. ✅ Validation longueur maximale
-4. ✅ Validation structure de données
-5. ✅ Gestion erreurs localStorage
-6. ✅ Prévention todos vides
-7. ✅ Persistance sécurisée
-8. ✅ Filtrage sécurisé
-9. ✅ Recherche case-insensitive
+1.  Sanitization XSS (titre)
+2.  Sanitization XSS (description)
+3.  Validation longueur maximale
+4.  Validation structure de données
+5.  Gestion erreurs localStorage
+6.  Prévention todos vides
+7.  Persistance sécurisée
+8.  Filtrage sécurisé
+9.  Recherche case-insensitive
 
 ---
 
-## 🔍 Scan de vulnérabilités
+##  Scan de vulnérabilités
 
 ### npm audit
 ```bash
@@ -174,19 +174,19 @@ npm audit
 - Dépendances à jour
 
 ### Dépendances
-- React 18.2.0 ✅
-- Vite 5.0.8 ✅
-- Tailwind CSS 3.3.6 ✅
-- Vitest 1.0.4 ✅
+- React 18.2.0 
+- Vite 5.0.8 
+- Tailwind CSS 3.3.6 
+- Vitest 1.0.4 
 
 ---
 
-## 📝 Recommandations pour la production
+##  Recommandations pour la production
 
 ### Court terme
-1. ✅ Implémenter DOMPurify pour sanitization avancée
-2. ✅ Ajouter des headers de sécurité HTTP
-3. ✅ Configurer HTTPS obligatoire
+1.  Implémenter DOMPurify pour sanitization avancée
+2.  Ajouter des headers de sécurité HTTP
+3.  Configurer HTTPS obligatoire
 
 ### Moyen terme
 1. Ajouter l'authentification utilisateur
@@ -200,7 +200,7 @@ npm audit
 
 ---
 
-## 🚀 Pipeline de sécurité CI/CD
+##  Pipeline de sécurité CI/CD
 
 ### Jobs de sécurité automatisés
 1. **security-scan** : npm audit
@@ -208,13 +208,13 @@ npm audit
 3. **build-and-test** : Validation complète
 
 ### Rapports générés
-- ✅ audit-report.json (conservé 30 jours)
-- ✅ Couverture de tests
-- ✅ Résultats ESLint
+-  audit-report.json (conservé 30 jours)
+-  Couverture de tests
+-  Résultats ESLint
 
 ---
 
-## 📞 Signaler une vulnérabilité
+## � Signaler une vulnérabilité
 
 Si vous découvrez une vulnérabilité de sécurité, veuillez :
 
@@ -225,7 +225,7 @@ Si vous découvrez une vulnérabilité de sécurité, veuillez :
 
 ---
 
-## ✅ Checklist de sécurité
+##  Checklist de sécurité
 
 ### Code
 - [x] Sanitization XSS implémentée
@@ -253,5 +253,5 @@ Si vous découvrez une vulnérabilité de sécurité, veuillez :
 
 **Dernière mise à jour :** 2026-01-21  
 **Version :** 1.0.0  
-**Statut :** ✅ Sécurisé pour démonstration DevSecOps
+**Statut :**  Sécurisé pour démonstration DevSecOps
 

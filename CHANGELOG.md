@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
@@ -7,7 +7,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [1.0.0] - 2026-01-21
 
-### 🎉 Version initiale - Application DevSecOps complète
+###  Version initiale - Application DevSecOps complète
 
 #### ✨ Ajouté
 - Application React 18 avec Vite
@@ -20,7 +20,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - Statistiques dynamiques
 - Interface responsive (mobile + desktop)
 
-#### 🔒 Sécurité
+####  Sécurité
 - Protection XSS avec fonction `sanitizeInput()`
 - Content Security Policy (CSP)
 - Validation des inputs (200 caractères max)
@@ -30,14 +30,14 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - Threat Model STRIDE complet
 - Documentation de sécurité complète
 
-#### 🧪 Tests
+####  Tests
 - 13 tests unitaires avec Vitest
 - 9 tests de sécurité
 - 4 tests fonctionnels
 - Couverture de code
 - Tests automatisés dans CI/CD
 
-#### 🚀 CI/CD
+####  CI/CD
 - Pipeline GitHub Actions complet
 - 5 jobs : build-and-test, security-scan, code-quality, deploy-preview, deploy-production
 - Tests sur Node.js 18.x et 20.x
@@ -46,7 +46,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - Rapports de sécurité (conservés 30 jours)
 - Déploiement automatique sur main
 
-#### 📚 Documentation
+####  Documentation
 - README.md complet
 - DEMARRAGE_RAPIDE.md
 - INSTALLATION.md
@@ -61,7 +61,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - DIAGRAMMES.md
 - RESUME_PROJET.md
 
-#### 🛠️ Configuration
+#### � Configuration
 - Git avec branches main et dev
 - ESLint pour la qualité du code
 - Prettier (configuration)
@@ -70,7 +70,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - Vite pour le build
 - Configuration Vercel pour déploiement
 
-#### 📦 Dépendances principales
+####  Dépendances principales
 - react: ^18.2.0
 - react-dom: ^18.2.0
 - lucide-react: ^0.294.0
@@ -106,11 +106,11 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 ## Types de changements
 
 - `✨ Ajouté` pour les nouvelles fonctionnalités
-- `🔧 Modifié` pour les changements aux fonctionnalités existantes
-- `🗑️ Déprécié` pour les fonctionnalités bientôt supprimées
-- `❌ Supprimé` pour les fonctionnalités supprimées
-- `🐛 Corrigé` pour les corrections de bugs
-- `🔒 Sécurité` pour les correctifs de sécurité
+- ` Modifié` pour les changements aux fonctionnalités existantes
+- ` Déprécié` pour les fonctionnalités bientôt supprimées
+- ` Supprimé` pour les fonctionnalités supprimées
+- `� Corrigé` pour les corrections de bugs
+- ` Sécurité` pour les correctifs de sécurité
 
 ---
 

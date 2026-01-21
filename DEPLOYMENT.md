@@ -1,16 +1,16 @@
-# 🚀 Guide de Déploiement - SecureTodo
+﻿#  Guide de Déploiement - SecureTodo
 
-## 📋 Options de déploiement
+##  Options de déploiement
 
-### Option 1 : Vercel (Recommandé) ⭐
+### Option 1 : Vercel (Recommandé) 
 
 #### Avantages
-✅ Déploiement automatique depuis GitHub  
-✅ HTTPS gratuit  
-✅ Headers de sécurité configurés  
-✅ Preview pour chaque Pull Request  
-✅ CDN global  
-✅ Rollback facile  
+ Déploiement automatique depuis GitHub  
+ HTTPS gratuit  
+ Headers de sécurité configurés  
+ Preview pour chaque Pull Request  
+ CDN global  
+ Rollback facile  
 
 #### Étapes de déploiement
 
@@ -35,7 +35,7 @@
 4. **Déployer**
    - Cliquer sur "Deploy"
    - Attendre 2-3 minutes
-   - ✅ Application déployée !
+   -  Application déployée !
 
 5. **URL de production**
    ```
@@ -45,9 +45,9 @@
 #### Configuration avancée
 
 Le fichier `vercel.json` est déjà configuré avec :
-- ✅ Headers de sécurité HTTP
-- ✅ Redirections SPA
-- ✅ Content Security Policy
+-  Headers de sécurité HTTP
+-  Redirections SPA
+-  Content Security Policy
 
 #### Déploiement automatique
 
@@ -123,7 +123,7 @@ git push origin main
 
 ---
 
-## 🔧 Configuration post-déploiement
+##  Configuration post-déploiement
 
 ### 1. Vérifier les headers de sécurité
 
@@ -136,23 +136,23 @@ https://securityheaders.com/?q=https://votre-url.vercel.app
 
 ### 2. Tester l'application
 
-✅ Ajouter une tâche  
-✅ Marquer comme complétée  
-✅ Filtrer les tâches  
-✅ Rechercher  
-✅ Modifier une tâche  
-✅ Supprimer une tâche  
-✅ Rafraîchir la page (persistance)  
+ Ajouter une tâche  
+ Marquer comme complétée  
+ Filtrer les tâches  
+ Rechercher  
+ Modifier une tâche  
+ Supprimer une tâche  
+ Rafraîchir la page (persistance)  
 
 ### 3. Vérifier la sécurité
 
-- ✅ HTTPS activé (cadenas vert)
-- ✅ Pas d'erreurs dans la console
-- ✅ CSP actif (vérifier dans DevTools)
+-  HTTPS activé (cadenas vert)
+-  Pas d'erreurs dans la console
+-  CSP actif (vérifier dans DevTools)
 
 ---
 
-## 📊 Monitoring et Analytics
+##  Monitoring et Analytics
 
 ### Vercel Analytics (optionnel)
 
@@ -170,7 +170,7 @@ https://securityheaders.com/?q=https://votre-url.vercel.app
 
 ---
 
-## 🔄 Workflow de déploiement
+##  Workflow de déploiement
 
 ### Développement
 ```bash
@@ -200,7 +200,7 @@ git push origin main
 
 ---
 
-## 🐛 Dépannage
+## � Dépannage
 
 ### Erreur : Build failed
 
@@ -236,7 +236,7 @@ npm run build
 
 ---
 
-## ✅ Checklist de déploiement
+##  Checklist de déploiement
 
 ### Avant le déploiement
 - [ ] Tous les tests passent localement
@@ -255,7 +255,7 @@ npm run build
 
 ---
 
-## 🎯 URLs du projet
+##  URLs du projet
 
 ### Production
 ```
@@ -274,7 +274,7 @@ https://github.com/Emmanuelladegbegnon/securetodo-devsecops
 
 ---
 
-## 📝 Commandes utiles
+##  Commandes utiles
 
 ```bash
 # Build local
@@ -292,14 +292,14 @@ npx vercel --prod
 
 ---
 
-## 🎉 Félicitations !
+##  Félicitations !
 
 Votre application SecureTodo est maintenant déployée avec :
-✅ HTTPS sécurisé  
-✅ Headers de sécurité  
-✅ Déploiement automatique  
-✅ Preview pour les PR  
-✅ CDN global  
+ HTTPS sécurisé  
+ Headers de sécurité  
+ Déploiement automatique  
+ Preview pour les PR  
+ CDN global  
 
 **Prochaine étape :** ÉTAPE 8 - Préparation de la restitution
 

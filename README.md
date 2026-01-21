@@ -1,4 +1,4 @@
-# 🔒 SecureTodo - Application DevSecOps
+﻿# SecureTodo - Application DevSecOps
 
 ![CI/CD Pipeline](https://github.com/Emmanuelladegbegnon/securetodo-devsecops/workflows/CI%2FCD%20Pipeline/badge.svg)
 [![Security](https://img.shields.io/badge/security-DevSecOps-blue.svg)](https://github.com/Emmanuelladegbegnon/securetodo-devsecops)
@@ -7,7 +7,7 @@
 
 Application de gestion de tâches sécurisée développée avec les principes DevSecOps.
 
-## 🚀 Installation
+## Installation
 
 ### Prérequis
 - Node.js (version 18 ou supérieure)
@@ -26,7 +26,7 @@ cd securetodo-devsecops
 npm install
 ```
 
-## 💻 Lancement de l'application
+##  Lancement de l'application
 
 ### Mode développement
 ```bash
@@ -44,21 +44,21 @@ npm run build
 npm run preview
 ```
 
-## 🧪 Tests
+##  Tests
 
 ```bash
 npm test
 ```
 
-## 🔒 Fonctionnalités de sécurité
+##  Fonctionnalités de sécurité
 
-- ✅ Sanitization des inputs (protection XSS)
-- ✅ Validation des données
-- ✅ Content Security Policy (CSP)
-- ✅ Limite de caractères (200 max)
-- ✅ Stockage local sécurisé
+-  Sanitization des inputs (protection XSS)
+-  Validation des données
+-  Content Security Policy (CSP)
+-  Limite de caractères (200 max)
+-  Stockage local sécurisé
 
-## 📦 Technologies utilisées
+##  Technologies utilisées
 
 - **React 18** - Framework UI
 - **Vite** - Build tool
@@ -66,17 +66,17 @@ npm test
 - **Lucide React** - Icônes
 - **localStorage** - Persistance des données
 
-## 🎯 Fonctionnalités
+##  Fonctionnalités
 
-- ✅ Créer, modifier, supprimer des tâches
-- ✅ Marquer comme complétée
-- ✅ Filtrer (Toutes / En cours / Complétées)
-- ✅ Recherche en temps réel
-- ✅ Statistiques (Total, En cours, Complétées)
-- ✅ Interface responsive
-- ✅ Sauvegarde automatique
+-  Créer, modifier, supprimer des tâches
+-  Marquer comme complétée
+-  Filtrer (Toutes / En cours / Complétées)
+-  Recherche en temps réel
+-  Statistiques (Total, En cours, Complétées)
+-  Interface responsive
+-  Sauvegarde automatique
 
-## 📝 Structure du projet
+##  Structure du projet
 
 ```
 securetodo-devsecops/
@@ -97,7 +97,7 @@ securetodo-devsecops/
 └── README.md                # Ce fichier
 ```
 
-## 🚀 Déploiement
+##  Déploiement
 
 ### Déploiement automatique avec Vercel
 
@@ -109,7 +109,7 @@ securetodo-devsecops/
 
 Voir [DEPLOYMENT.md](./DEPLOYMENT.md) pour plus de détails.
 
-## 🔐 Sécurité
+##  Sécurité
 
 Ce projet implémente les meilleures pratiques DevSecOps :
 
@@ -120,17 +120,17 @@ Ce projet implémente les meilleures pratiques DevSecOps :
 
 Voir [SECURITY.md](./SECURITY.md) pour le rapport complet.
 
-## 📚 Documentation
+##  Documentation
 
-- [🚀 Démarrage rapide](./DEMARRAGE_RAPIDE.md)
-- [📦 Installation détaillée](./INSTALLATION.md)
-- [🔒 Rapport de sécurité](./SECURITY.md)
-- [🛡️ Bonnes pratiques](./SECURITY_BEST_PRACTICES.md)
-- [🚀 Guide de déploiement](./DEPLOYMENT.md)
-- [📊 Diagrammes](./DIAGRAMMES.md)
-- [📝 Changelog](./CHANGELOG.md)
+- [ Démarrage rapide](./DEMARRAGE_RAPIDE.md)
+- [ Installation détaillée](./INSTALLATION.md)
+- [ Rapport de sécurité](./SECURITY.md)
+- [ Bonnes pratiques](./SECURITY_BEST_PRACTICES.md)
+- [ Guide de déploiement](./DEPLOYMENT.md)
+- [ Diagrammes](./DIAGRAMMES.md)
+- [ Changelog](./CHANGELOG.md)
 
-## 🤝 Contribution
+##  Contribution
 
 Les contributions sont les bienvenues ! Veuillez :
 
@@ -140,13 +140,13 @@ Les contributions sont les bienvenues ! Veuillez :
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrir une Pull Request
 
-## 📄 Licence
+##  Licence
 
 Ce projet est sous licence MIT.
 
-## 🇧🇯 Made in Bénin
+##  Made in Bénin
 
-Développé avec ❤️ pour démontrer les principes DevSecOps dans un contexte africain.
+Développé avec  pour démontrer les principes DevSecOps dans un contexte africain.
 
 **Projet réalisé pour :** Startup fictive béninoise
 **Objectif :** Livrer vite, éviter les erreurs, réduire les failles de sécurité

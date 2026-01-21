@@ -1,24 +1,24 @@
-# 🛡️ Bonnes Pratiques de Sécurité - SecureTodo
+﻿#  Bonnes Pratiques de Sécurité - SecureTodo
 
-## 📚 Guide DevSecOps
+##  Guide DevSecOps
 
 Ce document présente les bonnes pratiques de sécurité implémentées dans le projet SecureTodo.
 
 ---
 
-## 🎯 Principe : Shift Left Security
+##  Principe : Shift Left Security
 
 **Définition :** Intégrer la sécurité dès les premières étapes du développement, pas à la fin.
 
 ### Avantages
-✅ Détection précoce des vulnérabilités  
-✅ Coût de correction réduit  
-✅ Meilleure qualité du code  
-✅ Déploiement plus sûr  
+ Détection précoce des vulnérabilités  
+ Coût de correction réduit  
+ Meilleure qualité du code  
+ Déploiement plus sûr  
 
 ---
 
-## 🔒 1. Protection XSS (Cross-Site Scripting)
+##  1. Protection XSS (Cross-Site Scripting)
 
 ### Qu'est-ce que le XSS ?
 Injection de code JavaScript malveillant dans une application web.
@@ -28,10 +28,10 @@ Injection de code JavaScript malveillant dans une application web.
 // Input malveillant
 const userInput = '<script>alert("Hacké!")</script>';
 
-// Sans protection ❌
+// Sans protection 
 element.innerHTML = userInput; // DANGEREUX !
 
-// Avec protection ✅
+// Avec protection 
 const sanitized = sanitizeInput(userInput);
 element.textContent = sanitized; // SÛR
 ```
@@ -47,11 +47,11 @@ const sanitizeInput = (str) => {
 
 **Résultat :**
 - `<script>` → `&lt;script&gt;`
-- Le code ne s'exécute pas ✅
+- Le code ne s'exécute pas 
 
 ---
 
-## 🛡️ 2. Content Security Policy (CSP)
+##  2. Content Security Policy (CSP)
 
 ### Qu'est-ce que le CSP ?
 Un header HTTP qui définit quelles ressources peuvent être chargées.
@@ -65,22 +65,22 @@ Un header HTTP qui définit quelles ressources peuvent être chargées.
 ```
 
 ### Ce que ça bloque
-❌ Scripts externes (CDN non autorisés)  
-❌ Inline scripts malveillants  
-❌ Ressources de domaines non autorisés  
+ Scripts externes (CDN non autorisés)  
+ Inline scripts malveillants  
+ Ressources de domaines non autorisés  
 
 ---
 
-## ✅ 3. Validation des données
+##  3. Validation des données
 
 ### Règles de validation
 
 #### Titre
 ```javascript
 if (input.trim() && input.length <= 200) {
-  // Valide ✅
+  // Valide 
 } else {
-  // Invalide ❌
+  // Invalide 
 }
 ```
 
@@ -98,7 +98,7 @@ const isValidTodo = (todo) => {
 
 ---
 
-## 💾 4. Sécurité du localStorage
+##  4. Sécurité du localStorage
 
 ### Risques
 - Corruption de données
@@ -122,13 +122,13 @@ try {
 ```
 
 **Mesures :**
-✅ Try-catch pour gérer les erreurs  
-✅ Validation du type (Array)  
-✅ Nettoyage en cas d'erreur  
+ Try-catch pour gérer les erreurs  
+ Validation du type (Array)  
+ Nettoyage en cas d'erreur  
 
 ---
 
-## 🔍 5. Tests de sécurité automatisés
+##  5. Tests de sécurité automatisés
 
 ### Tests implémentés
 
@@ -155,7 +155,7 @@ it('should handle localStorage errors', () => {
 
 ---
 
-## 📊 6. Pipeline de sécurité CI/CD
+##  6. Pipeline de sécurité CI/CD
 
 ### Workflow automatisé
 
@@ -169,13 +169,13 @@ jobs:
 ```
 
 ### Déclencheurs
-- ✅ Chaque push
-- ✅ Chaque Pull Request
-- ✅ Scan hebdomadaire automatique
+-  Chaque push
+-  Chaque Pull Request
+-  Scan hebdomadaire automatique
 
 ---
 
-## 🎯 7. Threat Modeling - STRIDE
+##  7. Threat Modeling - STRIDE
 
 ### Méthodologie STRIDE
 
@@ -190,7 +190,7 @@ jobs:
 
 ---
 
-## 📝 8. Checklist de sécurité
+##  8. Checklist de sécurité
 
 ### Avant chaque commit
 - [ ] Code sanitizé et validé
@@ -211,26 +211,26 @@ jobs:
 
 ---
 
-## 🚀 9. Outils recommandés
+##  9. Outils recommandés
 
 ### Scan de vulnérabilités
-- **npm audit** - Intégré à npm ✅
+- **npm audit** - Intégré à npm 
 - **Snyk** - Scan avancé des dépendances
 - **OWASP Dependency-Check** - Base CVE/NVD
 
 ### Analyse de code
-- **ESLint** - Qualité du code ✅
+- **ESLint** - Qualité du code 
 - **SonarQube/SonarCloud** - Analyse statique
 - **CodeQL** - Détection de vulnérabilités
 
 ### Tests
-- **Vitest** - Tests unitaires ✅
-- **Testing Library** - Tests React ✅
+- **Vitest** - Tests unitaires 
+- **Testing Library** - Tests React 
 - **OWASP ZAP** - Tests de pénétration
 
 ---
 
-## 📚 10. Ressources
+##  10. Ressources
 
 ### Documentation
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
@@ -244,28 +244,28 @@ jobs:
 
 ---
 
-## ✅ Résumé
+##  Résumé
 
 ### Ce qui est implémenté
-✅ Sanitization XSS  
-✅ Content Security Policy  
-✅ Validation des données  
-✅ Gestion sécurisée localStorage  
-✅ Tests de sécurité automatisés  
-✅ Pipeline CI/CD avec scans  
-✅ Headers de sécurité HTTP  
-✅ Threat modeling STRIDE  
+ Sanitization XSS  
+ Content Security Policy  
+ Validation des données  
+ Gestion sécurisée localStorage  
+ Tests de sécurité automatisés  
+ Pipeline CI/CD avec scans  
+ Headers de sécurité HTTP  
+ Threat modeling STRIDE  
 
 ### Impact
-🔒 **0 vulnérabilités critiques**  
-✅ **13/13 tests de sécurité passent**  
-🛡️ **Protection multi-couches**  
-📊 **Monitoring automatisé**  
+ **0 vulnérabilités critiques**  
+ **13/13 tests de sécurité passent**  
+ **Protection multi-couches**  
+ **Monitoring automatisé**  
 
 ---
 
 **Projet :** SecureTodo DevSecOps  
 **Version :** 1.0.0  
 **Date :** 2026-01-21  
-**Statut :** ✅ Sécurisé
+**Statut :**  Sécurisé
 
