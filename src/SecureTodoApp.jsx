@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2, Check, X, Edit2, Save, Search } from 'lucide-react';
 
 export default function SecureTodoApp() {
   const [todos, setTodos] = useState([]);
@@ -118,7 +117,7 @@ export default function SecureTodoApp() {
       <div className="max-w-3xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h1 className="text-3xl font-bold text-indigo-600 mb-2">
-            🔒 SecureTodo
+             SecureTodo
           </h1>
           <p className="text-gray-600 text-sm">
             Application DevSecOps - Gestion de tâches sécurisée
@@ -177,8 +176,7 @@ export default function SecureTodoApp() {
               onClick={addTodo}
               className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-2 font-medium"
             >
-              <Plus size={20} />
-              Ajouter la tâche
+              + Ajouter la tâche
             </button>
           </div>
         </div>
@@ -187,13 +185,12 @@ export default function SecureTodoApp() {
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                 <input
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Rechercher une tâche..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                  placeholder="🔍 Rechercher une tâche..."
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
             </div>
@@ -248,13 +245,13 @@ export default function SecureTodoApp() {
                         onClick={saveEdit}
                         className="flex items-center gap-1 px-3 py-1 bg-green-600 text-white rounded-lg hover:bg-green-700"
                       >
-                        <Save size={16} /> Sauvegarder
+                        Sauvegarder
                       </button>
                       <button
                         onClick={cancelEdit}
                         className="flex items-center gap-1 px-3 py-1 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
                       >
-                        <X size={16} /> Annuler
+                        Annuler
                       </button>
                     </div>
                   </div>
@@ -268,7 +265,7 @@ export default function SecureTodoApp() {
                           : 'border-gray-300 hover:border-indigo-500'
                       }`}
                     >
-                      {todo.completed && <Check size={16} className="text-white" />}
+                      {todo.completed && <span className="text-white text-sm">✓</span>}
                     </button>
 
                     <div className="flex-1 min-w-0">
@@ -294,17 +291,17 @@ export default function SecureTodoApp() {
                     <div className="flex gap-2 flex-shrink-0">
                       <button
                         onClick={() => startEditing(todo)}
-                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                        className="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded-lg transition"
                         title="Modifier"
                       >
-                        <Edit2 size={18} />
+                        Modifier
                       </button>
                       <button
                         onClick={() => deleteTodo(todo.id)}
-                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+                        className="px-3 py-1 text-red-600 hover:bg-red-50 rounded-lg transition"
                         title="Supprimer"
                       >
-                        <Trash2 size={18} />
+                        Supprimer
                       </button>
                     </div>
                   </div>
@@ -314,10 +311,7 @@ export default function SecureTodoApp() {
           )}
         </div>
 
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>🔒 Développé avec les principes DevSecOps</p>
-          <p className="mt-1">Sécurité intégrée • Pipeline CI/CD • Tests automatisés</p>
-        </div>
+       
       </div>
     </div>
   );
