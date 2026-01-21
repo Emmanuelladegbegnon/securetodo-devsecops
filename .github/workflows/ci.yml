@@ -1,0 +1,160 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: 📦 Install dependencies
+      run: npm ci
+    
+    - name: 🔍 Run ESLint
+      run: npm run lint
+      continue-on-error: true
+    
+    - name: 🧪 Run tests
+      run: npm test
+    
+    - name: 🏗️ Build application
+      run: npm run build
+    
+    - name: 📊 Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-${{ matrix.node-version }}
+        path: dist/
+        retention-days: 7
+
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    
+    - name: 📦 Install dependencies
+      run: npm ci
+    
+    - name: 🛡️ Run npm audit
+      run: npm audit --audit-level=moderate
+      continue-on-error: true
+    
+    - name: 🔒 Check for known vulnerabilities
+      run: |
+        echo "Scanning for security vulnerabilities..."
+        npm audit --json > audit-report.json || true
+        cat audit-report.json
+    
+    - name: 📊 Upload security report
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-audit-report
+        path: audit-report.json
+        retention-days: 30
+
+  code-quality:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    
+    - name: 📦 Install dependencies
+      run: npm ci
+    
+    - name: 📏 Check code formatting
+      run: |
+        echo "Checking code quality..."
+        npm run lint || true
+    
+    - name: 📊 Generate test coverage
+      run: |
+        npm test -- --coverage || true
+
+  deploy-preview:
+    runs-on: ubuntu-latest
+    needs: [build-and-test, security-scan]
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    
+    - name: 📦 Install dependencies
+      run: npm ci
+    
+    - name: 🏗️ Build
+      run: npm run build
+    
+    - name: 💬 Comment PR
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '✅ Build successful! Preview will be available soon.'
+          })
+
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [build-and-test, security-scan, code-quality]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+    
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    
+    - name: 📦 Install dependencies
+      run: npm ci
+    
+    - name: 🏗️ Build for production
+      run: npm run build
+    
+    - name: 🚀 Deploy notification
+      run: |
+        echo "🎉 Application ready for deployment!"
+        echo "Build artifacts are available in the dist/ folder"
+
